@@ -45,4 +45,10 @@ class User extends Authenticatable
     {
         return $this->role === 'student';
     }
+    // app/Models/User.php — add this method
+
+public function studentProfile(): \Illuminate\Database\Eloquent\Relations\HasOne
+{
+    return $this->hasOne(StudentProfile::class);
+}
 }
