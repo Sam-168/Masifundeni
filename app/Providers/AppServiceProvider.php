@@ -11,11 +11,15 @@ use App\Policies\StudentPolicy;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Schema;
 
 class AppServiceProvider extends ServiceProvider
 {
     public function boot(): void
     {
+
+        Schema::defaultStringLength(191);
+
         Gate::policy(Course::class, CoursePolicy::class);
         Gate::policy(Enrolment::class, EnrolmentPolicy::class);
         Gate::policy(User::class, StudentPolicy::class);
