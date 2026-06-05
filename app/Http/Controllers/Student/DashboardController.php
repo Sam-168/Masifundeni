@@ -9,6 +9,18 @@ class DashboardController extends Controller
 {
     public function index()
 {
-    return view('student.dashboard'); // temporary — we'll build real dashboards later
+   $enrolments = Enrolment::where('student_id', auth()->id())
+            ->with('course.instructor')
+            ->latest()
+            ->get();
+
+        $stats = [
+            'enrolled'   => $enrolments->whereIn('status', ['pending', 'active'])->count(),
+            'active'     => $enrolments->where('status', 'active')->count(),
+            'completed'  => $enrolments->where('status', 'completed')->count(),
+            'dropped'    => $enrolments->where('status', 'dropped')->count(),
+        ];
+
+        return view('student.dashboard', compact('stats', 'enrolments'));
 }
 }
