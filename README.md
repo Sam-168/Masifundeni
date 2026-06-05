@@ -1,5 +1,51 @@
 # Masifundeni
 
+##Project Overview
+Masifundeni is a student management system web-based application designed to manage students, course , instructors and enrolments within and educational institution. The system provides role-based access control and allows administrators, instructors and students to perform specific tasks according to their assigned roles.
+
+## Technologies and Framework used
+# Backend
+- Laravel 12
+- PHP 8.2+
+
+# Frontend
+- Blade Templating Engine
+- HTML5
+- CSS
+
+# Authentication
+- Laravel Breeze
+
+# Database
+-MYSQL
+-Eloquent ORM
+
+# Development Tools
+- Composer
+- Node.js
+- NPM
+- Git
+- GitHub
+
+## Features
+# Administrator
+- Manage student records
+- Create , update and delete courses
+- Manage instructors
+- View system reports
+- Manage user accounts
+
+# Instructor
+- View assigned courses
+- Manage student enrolment
+- Update Student progress information
+- View course reports
+
+# Student
+- Register an account
+- View available courses
+- Enrol in courses View personal progress reports
+
 ## Setup
 
 1. Clone the repo
