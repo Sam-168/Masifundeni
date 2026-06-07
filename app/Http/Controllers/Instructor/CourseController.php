@@ -7,11 +7,13 @@ use App\Http\Requests\Instructor\StoreCourseRequest;
 use App\Http\Requests\Instructor\UpdateCourseRequest;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use App\Models\Course;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 
 class CourseController extends Controller
 {
+    use AuthorizesRequests;
     /** GET /instructor/courses */
     use AuthorizesRequests;
     public function index()
